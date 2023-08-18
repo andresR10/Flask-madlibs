@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Madlibs</title>
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block content %}
+        <h1>Questions for {{ title }}</h1>
+    
+        <form action="/story">
+            {% for prompt in prompts %}
+                <label for="{{ prompt }}">{{ prompt }}:</label>
+                <input type="text" name="{{ prompt }}" required><br>
+            {% endfor %}
+        <button>Generate</button>
+        </form>
+    {% endblock %}
+
+</body>
+</html>
